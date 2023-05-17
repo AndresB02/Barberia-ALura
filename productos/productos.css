@@ -1,0 +1,364 @@
+#header {
+    background: url(/medias/bg.jpg);
+    padding: 20px 0;
+    border: 0 0 0 2px solid black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.caja {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+
+nav {
+    /*este tipo de posicion nos ayuda a que el movimiento del elemento no sea estatico y se pueda distribuir por la pagina*/
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+/** por defecto la lista viene en inline block. quiere decir que cada elemento ocupa el 1'00% dela pagina por eso, se posicionan uno debajo del otro.
+por eso toca cambiar esa propiedad, se coloca dispaly:inline eso lo entendera el navegador como que no quiro que me use el 100% de la pagina **/
+nav li {
+    display: inline;
+    /*espaciado interno primero es hacia arriba, segundo hacia derecha, tercero abajao, y cuarto a la izquierda*/
+    margin: 0 0 0 5px;
+}
+
+nav a {
+    /*metodo para transformar texto de minuculas a mayusculas*/
+    text-transform: uppercase;
+    color: white;
+    /*metodo para ponerle "negrita" al texto*/
+    font-weight: bold;
+    font-size: 22px;
+    /*metodo para quitarle el subrayado al texo*/
+    text-decoration: none;
+}
+
+/*el hover es el metodo que captura un evento en css y que devuelva alguna accion, en este caso es cambiar el color*/
+nav a:hover {
+    color:forestgreen;
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+.productos  {
+    width: 940px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.productos li {
+    /* este display sirve para organizar horizontalmente los elementos de una lista*/
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    /*vetical align sirve para alinear la parte vertical*/
+    vertical-align: top;
+    /**/
+    margin: 1.5% 1.5%;
+    padding: 20px 20px;
+    /*border box, ayuda a que no se sobrepasen las medidas, y se contabilicen bien las medidas*/
+    box-sizing: border-box;
+    /*border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    esto lo podemos abreviar de la siguiente manera*/
+    border: 2px solid black;
+    /*border raidus es para darle un  bordeado a las cajas, van en orden en sentido de las manecillas del reloj
+    solo se ponen todos por si queremos darle medidas diferentes a cada uno, de resto solo es necesario un valor*/
+    border-radius: 10px 10px 10px 10px;
+}
+
+.productos li:hover {
+    border-color:forestgreen;
+}
+
+/*el active captura el evento del click para devolver una accion*/
+.productos li:active {
+    border-color: darkblue;
+}
+
+.productos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.productos li:hover h2 {
+    font-size: 33px;
+}
+
+.producto-descripcion {
+    font-size: 20px;
+}
+
+.producto-precio {
+    font-size: 25px;
+    /*font weight sirve para darle negrita al texto*/
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+h2  {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cejas, .bigote, .afeitado {
+    padding: 20px 0px 40px;
+}
+
+#footer{
+    text-align: center;
+    background: url(/medias/bg.jpg);
+    padding: 40px;
+    color: white;
+}
+
+.copyright {
+    color: white;
+    font-size: 13px;
+    margin: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    h1{
+        text-align: center;
+    }
+    h2  {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    .caja, .servicios  {
+        width: auto;
+    }
+    .productos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+         width: 70%;
+    }
+    .productos li {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    .afeitado {
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        padding-left: 50px;
+    }
+    .img {
+        width: 75%;
+        padding: 20px;
+        margin: 20px;
+    }
+    .imgUno {
+        width: 80%;
+        padding: 20px;
+        margin: 20px;
+    }
+    .cejas {
+        padding: 20px 20px 40px 10px;
+    }
+    .afeitado {
+        padding: 20px 20px 57px 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    h1{
+        text-align: center;
+    }
+    h2  {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    nav a {
+        font-size: 20px;
+    }
+    .caja, .servicios  {
+        width: auto;
+    }
+    .productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         width: auto;
+    }
+    .productos li {
+        display: block;
+        width: 30%;
+    }
+    .img {
+        width: 75%;
+        padding: 20px;
+        margin: 20px;
+    }
+    .imgUno {
+        width: 80%;
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1{
+        text-align: center;
+    }
+    h2  {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    nav a {
+        font-size: 22px;
+    }
+    .caja, .servicios  {
+        width: auto;
+    }
+    .productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         width: auto;
+    }
+    .productos li {
+        display: block;
+        width: 40%;
+    }
+    .img {
+        width: 75%;
+        padding: 20px;
+        margin: 20px;
+    }
+    .imgUno {
+        width: 80%;
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1{
+        text-align: center;
+    }
+    h2  {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    nav a {
+        font-size: 20px;
+    }
+    .caja, .servicios  {
+        width: auto;
+    }
+    .productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         width: auto;
+    }
+    .productos li {
+        display: block;
+        width: 75%;
+    }
+    .img {
+        width: 75%;
+        padding: 20px;
+        margin: 20px;
+    }
+    .imgUno {
+        width: 80%;
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    h1{
+        text-align: center;
+    }
+    h2  {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    nav a {
+        font-size: 16px;
+    }
+    .caja, .servicios  {
+        width: auto;
+    }
+    .productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    .productos li {
+        display: block;
+        width: 80%;
+    }
+    .img {
+        width: 70%;
+        padding: 20px;
+        margin: 20px;
+    }
+    .imgUno {
+        width: 75%;
+    }
+}
+
+
+

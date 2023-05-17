@@ -1,0 +1,477 @@
+#header {
+    background: url(/medias/bg.jpg);
+    padding: 20px 0;
+    border: 0 0 0 2px solid black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.caja {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+
+nav {
+    /*este tipo de posicion nos ayuda a que el movimiento del elemento no sea estatico y se pueda distribuir por la pagina*/
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+/** por defecto la lista viene en inline block. quiere decir que cada elemento ocupa el 1'00% dela pagina por eso, se posicionan uno debajo del otro.
+por eso toca cambiar esa propiedad, se coloca dispaly:inline eso lo entendera el navegador como que no quiro que me use el 100% de la pagina **/
+nav li {
+    display: inline;
+    /*espaciado interno primero es hacia arriba, segundo hacia derecha, tercero abajao, y cuarto a la izquierda*/
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    /*metodo para transformar texto de minuculas a mayusculas*/
+    text-transform: uppercase;
+    color: white;
+    /*metodo para ponerle "negrita" al texto*/
+    font-weight: bold;
+    font-size: 22px;
+    /*metodo para quitarle el subrayado al texo*/
+    text-decoration: none;
+}
+
+/*el hover es el metodo que captura un evento en css y que devuelva alguna accion, en este caso es cambiar el color*/
+nav a:hover {
+    color:forestgreen;
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+.principal {
+    background: #cccccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.titulo-uno {
+    padding-left: 5px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.informacion p {
+    font-size: 24px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.informacion strong{
+    font-weight: bold;
+}
+
+.informacion {
+    margin: 50px;
+}
+
+#mision {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#banner {
+    width: 40%;
+    height: 30%;
+    transition: 500ms;
+}
+
+#banner:hover {
+    opacity: 0.8;
+}
+
+.titulo-centralizado {
+    text-align: left;
+}
+
+p {
+    text-align: center;
+}
+
+em strong {
+    color: darkred;
+}
+
+#mision {
+    font-size: 20px;
+    text-align: center;
+}
+
+.diferenciales {
+    background: url(/medias/bg.jpg);
+    padding:30px 30px 30px 30px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imgDiferencial {
+    transition: 500ms;
+}
+
+.imgDiferencial:hover {
+    opacity: 0.6;
+}
+
+.diferencias {
+    padding: 20px;
+    margin: 10px;
+}
+
+.items {
+    font-style: italic;
+    font-size: 24px;
+    padding: 20px 0;
+    margin: 1em 0 1em;
+    list-style: circle;
+    line-height: 1.5;
+}
+
+/* para degradar colores se usa
+    background: linear-gradiente();
+    dentro de los parentesis van los colores pero lo aplica de manera horizontal
+    si queremos cambiar el sentido del degrade se incluye en los parentesis
+    como primer parametro, los grados para cambiar la posicion
+    ejemplo = background: linear-gradiente(45deg, orange, blue);
+*/
+
+/*
+para modificar la primera letra de  un titulo, palabra o parrafo se hace con:
+./#nombreDeLaClase/id::first-letter {} y ahi empiezan a modificar a gusto hay varias
+ramificaciones como first.line
+*/
+
+/*./#nombreDeLaClase/id::before {
+    content: "{"
+}
+
+./#nombreDeLaClase/id::after {
+    content: "}"
+}
+before y after sirven para añadir elementos en el principio o al final de algun elemento de texto
+*/
+
+
+/* SELECTORES AVANZADOS*/
+/*
+*  Al usar el mayor que > entre dos elementos (main > p) esta diciendo que solo
+    se le aplicaran las modificiaciones a los hijos.
+*  al colocar + entre dos elementos le da a entender que seleccionara el elemento que le sigue
+    ejemplo = img + p, ahi seria seleccionado el primer parrafo que va de seguido a la imagen.
+*  al colocar ~ entre dos elementos quiere decir que seleccione todos los elementos que van
+    seguidos del primer elemento puesto ejemplo = img ~ p, seleccionara todos los p's seguidos de
+    la imagen.
+*  al colocar nombrClase/Id p:not("nombre del elemento") {
+    background: green; estamos diciendo que pintara todo de verde
+    menos el elemente puesto entre el parentesis del not()
+}
+*/
+/***************************************/
+
+.imgDiferencial {
+    width: 35%;
+    padding: 10px
+}
+
+.titulo-centralizado {
+    font-size: 2em;
+}
+
+.mapa {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 0px;
+    width: 35%;
+}
+
+.mapaDos {
+    padding: 23px;
+}
+
+.ratio {
+    width: 50%;
+    margin: 2em auto;
+    background: #cccccc;
+    /*estuctura del box-shadow => primera posicion eje x, segundo eje y
+    tercero es la difuminacion, el cuarto parametro es el sprint=es cuanto queremos
+    expandir la sombra y el ultimo es color de la sombra*/
+    /*se pueden meter varias sombras en un mismo elemento
+        con text-shadow, se le da sombra a los textos.
+    */
+    box-shadow: 10px 10px 50px 10px black;
+    /* se puede colocar sombras internas con box-shadow:inset: 10 50 color;*/
+}
+
+#footer{
+    text-align: center;
+    background: url(/medias/bg.jpg);
+    padding: 40px;
+    color: white;
+}
+
+.copyright {
+    color: white;
+    font-size: 13px;
+    margin: 20px;
+}
+
+
+@media screen and (max-width: 1200px ) {
+    h1{
+        text-align: center;
+    }
+    nav {
+        position: static;
+        text-align: center;
+        padding: 10px;
+    }
+    .caja, .principal, .mapa, .diferenciales {
+        width: auto;
+    }
+    .ratio {
+        width: 90%;
+    }
+    #banner {
+        width: 100%;
+    }
+    .principal {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .diferenciales {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .informacion {
+        padding: 30px;
+        margin: 0px;
+    }
+    .titulo-uno {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .titulo-centralizado {
+        text-align: center;
+    }
+    .imgDiferencial {
+        width: 100%;
+    }
+    .video {
+        margin: 30px;
+    }
+}
+
+@media screen and (max-width: 992px ) {
+    h1{
+        text-align: center;
+    }
+    nav {
+        position: static;
+        text-align: center;
+        padding: 10px;
+    }
+    .caja, .principal, .mapa, .diferenciales {
+        width: auto;
+    }
+    .ratio {
+        width: 90%;
+    }
+    #banner {
+        width: 100%;
+    }
+    .principal {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .diferenciales {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .informacion {
+        padding: 30px;
+        margin: 0px;
+    }
+    .titulo-uno {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .titulo-centralizado {
+        text-align: center;
+    }
+    .imgDiferencial {
+        width: 100%;
+    }
+    .video {
+        margin: 30px;
+    }
+}
+
+@media screen and (max-width: 768px ) {
+    h1{
+        text-align: center;
+    }
+    nav {
+        position: static;
+        text-align: center;
+        padding: 10px;
+    }
+    .caja, .principal, .mapa, .diferenciales {
+        width: auto;
+    }
+    .ratio {
+        width: 90%;
+    }
+    #banner {
+        width: 100%;
+    }
+    .principal {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .diferenciales {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .informacion {
+        padding: 30px;
+        margin: 0px;
+    }
+    .titulo-uno {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .titulo-centralizado {
+        text-align: center;
+    }
+    .imgDiferencial {
+        width: 100%;
+    }
+    .video {
+        margin: 30px;
+    }
+}
+
+@media screen and (max-width: 480px ) {
+    h1{
+        text-align: center;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    nav a {
+        font-size: 18px;
+    }
+    .caja, .principal, .mapa, .diferenciales {
+        width: auto;
+    }
+    .ratio {
+        width: 90%;
+    }
+    #banner {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .principal {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .diferenciales {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .informacion {
+        padding: 10px;
+        margin: 0px;
+    }
+    .titulo-uno {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .titulo-centralizado {
+        text-align: center;
+    }
+    .imgDiferencial {
+        width: 105%;
+    }
+
+}
+
+@media screen and (max-width: 360px ) {
+    h1{
+        text-align: center;
+    }
+    nav {
+        position: static;
+        text-align: center;
+    }
+    nav a {
+        font-size: 16px;
+    }
+    .caja, .principal, .mapa, .diferenciales {
+        width: auto;
+    }
+    .ratio {
+        width: 90%;
+    }
+    #banner {
+        width: 100%;
+    }
+    .principal {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .informacion {
+        padding: 10px;
+        margin: 0px;
+    }
+    .diferenciales {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .titulo-uno {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .titulo-centralizado {
+        text-align: center;
+    }
+    .imgDiferencial {
+        width: 105%;
+    }
+}
+
+
+
+
+
+
+
